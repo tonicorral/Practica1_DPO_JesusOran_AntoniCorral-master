@@ -1,0 +1,244 @@
+[
+  {
+    "adventureName": "wwwwwwwwww",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "wqqaa",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "porfavorrrrr",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Morgoth",
+            "challenge": "Boss",
+            "damageType": "Psychical",
+            "experience": 168,
+            "hitPoints": 100,
+            "initiative": 4,
+            "damageDice": "d20"
+          },
+          {
+            "name": "Morgoth",
+            "challenge": "Boss",
+            "damageType": "Psychical",
+            "experience": 168,
+            "hitPoints": 100,
+            "initiative": 4,
+            "damageDice": "d20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "nano",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Sauron",
+            "challenge": "Boss",
+            "damageType": "Physical",
+            "experience": 148,
+            "hitPoints": 89,
+            "initiative": 3,
+            "damageDice": "d20"
+          },
+          {
+            "name": "Sauron",
+            "challenge": "Boss",
+            "damageType": "Physical",
+            "experience": 148,
+            "hitPoints": 89,
+            "initiative": 3,
+            "damageDice": "d20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "nnanna",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "toni",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "anannanana",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "siusplau",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
+  }
+]
