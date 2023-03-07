@@ -192,13 +192,13 @@ public class Menu {
     }
 
     public void menuAdventures(){
-        System.out.println("Tavern keeper: “So, you are looking to go on an adventure?”\n" +
-                "“Where do you fancy going?”\n" +
+        System.out.println("\nTavern keeper: “So, you are looking to go on an adventure?”\n" +
+                "“Where do you fancy going?”\n\n" +
                 "Available adventures:");
     }
 
     public void showName(String info){
-        System.out.println();
+        System.out.println(""+info+"");
     }
 
 }
