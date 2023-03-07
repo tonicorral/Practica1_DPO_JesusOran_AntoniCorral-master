@@ -32,13 +32,23 @@ public class Menu {
     public void showMessageTryAgain(){
         showMessage("Try another number\n\n");
     }
-    public void showMenu(){
+    public void showMenuOK(){
         System.out.println("The tavern keeper looks at you and says:");
         System.out.println("“Welcome adventurer! How can I help you?”\n");
         System.out.println("1) Character creation");
         System.out.println("2) List characters");
         System.out.println("3) Create an adventure");
         System.out.println("4) Start an adventure");
+        System.out.println("5) Exit\n");
+    }
+
+    public void showMenuBAD(int i){
+        System.out.println("The tavern keeper looks at you and says:");
+        System.out.println("“Welcome adventurer! How can I help you?”\n");
+        System.out.println("1) Character creation");
+        System.out.println("2) List characters");
+        System.out.println("3) Create an adventure");
+        System.out.println("4) Start an adventure (disable: create "+i+" characters first)");
         System.out.println("5) Exit\n");
     }
 
@@ -179,6 +189,16 @@ public class Menu {
             }
         }
         return new int[]{monster,numMonster};
+    }
+
+    public void menuAdventures(){
+        System.out.println("Tavern keeper: “So, you are looking to go on an adventure?”\n" +
+                "“Where do you fancy going?”\n" +
+                "Available adventures:");
+    }
+
+    public void showName(String info){
+        System.out.println();
     }
 
 }

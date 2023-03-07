@@ -67,18 +67,19 @@ public class AdventureManager {
 
         return names;
     }
-/**
-    public Combat createCombat(){
 
+    public List<String> getAdventureName(){
+        try {
+            List <Adventure> adventures = adventureDAO.loadAdventure();
+            List<String> info = new ArrayList<>();
+
+            for (int i = 0; i < adventures.size(); i++) {
+                info.add(adventures.get(i).getAdventureName());
+            }
+            return info;
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
     }
-
-    public Monster addMonster(){
-
-    }
-
-    public Monster removeMonster(){
-
-    }
- **/
 }
 

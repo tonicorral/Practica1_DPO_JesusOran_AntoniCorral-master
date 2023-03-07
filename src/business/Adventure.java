@@ -8,4 +8,16 @@ public class Adventure {
         this.adventureName = adventureName;
         this.combats = combats;
     }
+
+    public String getAdventureName() {
+        return adventureName;
+    }
+
+    public void setAdventureName(String adventureName) {
+        this.adventureName = adventureName;
+    }
+
+    public void setCombats(Combat[] combats) {
+        this.combats = combats;
+    }
 }

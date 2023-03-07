@@ -144,5 +144,14 @@ public class CharacterManager {
         }
     }
 
+    public int countCharacter(){
+        try {
+            List<Character> characters = characterDAO.loadCharacters();
+            return characters.size();
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

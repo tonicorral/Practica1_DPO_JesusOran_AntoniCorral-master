@@ -28,7 +28,11 @@ public class Controller {
             am.getMonstersInfo();
             menu.showMessageLoaded();
             do {
-                menu.showMenu();
+                if(cm.countCharacter()>3){
+                    menu.showMenuOK();
+                }else{
+                    menu.showMenuBAD(cm.countCharacter());
+                }
                 menu.showMessage("Your answer: ");
                 option = menu.askForAnOption(5, 1);
                 stop = optionRun(option);
@@ -182,10 +186,14 @@ public class Controller {
         return true;
     }
 
-    private boolean startAdventure(){
-        System.out.println("4");
+    private boolean startAdventure() {
+        menu.menuAdventures();
+        // HAY QUE MIRAR ANTES QUE SI HAY MENOS DE 3 NO PUEDE MOSRAR ESTO
+        List<String> info = am.getAdventureName();
+        for (int i = 0; i < am.getAdventureName().size(); i++) {
+            menu.showName(info.get(i));
+        }
         return true;
-
     }
 }
 
