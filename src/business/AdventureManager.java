@@ -68,7 +68,7 @@ public class AdventureManager {
         return names;
     }
 
-    public List<String> getAdventureName(){
+    public List<String> getAllAdventureName(){
         try {
             List <Adventure> adventures = adventureDAO.loadAdventure();
             List<String> info = new ArrayList<>();
@@ -81,5 +81,36 @@ public class AdventureManager {
             throw new RuntimeException(e);
         }
     }
+    public String getAdventureName(int number){
+        try {
+            List <Adventure> adventures = adventureDAO.loadAdventure();
+            String info = adventures.get(number).getAdventureName();
+            return info;
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public int getNumEncounters(int numAdventure){
+        List <Adventure> adventures = null;
+        try {
+            adventures = adventureDAO.loadAdventure();
+            return adventures.get(numAdventure).getNumEncounter();
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<String[]> getCombatMonsters(int numAdv, int numComb){
+        List <Adventure> adventures = null;
+        try {
+            adventures = adventureDAO.loadAdventure();
+            return adventures.get(numAdv).getCombats()[numComb].getMonsterList();
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
 

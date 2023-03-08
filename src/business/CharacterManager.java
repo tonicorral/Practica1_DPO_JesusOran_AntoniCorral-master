@@ -152,6 +152,23 @@ public class CharacterManager {
             throw new RuntimeException(e);
         }
     }
+    public List<Character> getParty(List<String> characterName){
+        try {
+            List<Character> characters = characterDAO.loadCharacters();
+            List<Character> party = new ArrayList<>();
+            for (int i = 0; i < characterName.size(); i++) {
+                for (int j = 0; j < characters.size(); j++) {
+                    if( characters.get(j).equals(characterName.get(i))){
+                        party.add(characters.get(j));
+                        break;
+                    }
+                }
+            }
+            return party;
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 }

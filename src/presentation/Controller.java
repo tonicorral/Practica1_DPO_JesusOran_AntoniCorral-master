@@ -187,12 +187,34 @@ public class Controller {
     }
 
     private boolean startAdventure() {
+        int number;
         menu.menuAdventures();
         // HAY QUE MIRAR ANTES QUE SI HAY MENOS DE 3 NO PUEDE MOSRAR ESTO
-        List<String> info = am.getAdventureName();
-        for (int i = 0; i < am.getAdventureName().size(); i++) {
-            menu.showName(info.get(i));
+        List<String> info = am.getAllAdventureName();
+        for (int i = 0; i < am.getAllAdventureName().size(); i++) {
+            menu.showName(info.get(i), i);
         }
+        number  = menu.showNumberAdventure();
+        int numCharacters = menu.showNameAdv(am.getAdventureName(number));
+        List<String> character = cm.showCharacters("");
+        List<String> party = new ArrayList<>();
+
+        for (int i = 0; i < numCharacters; i++) {
+            int selection = menu.selectPartyAdv(numCharacters, i, party, character);
+            party.add(character.get(selection));
+            character.remove(selection);
+        }
+        menu.yourParty(numCharacters, party, info.get(number)); //seleccion de jugadores
+        int encounters = am.getNumEncounters(number);
+
+        for (int i = 0; i < encounters; i++) {
+            menu.printMonstersCombat(am.getCombatMonsters(number, i), i);
+        }
+
+
+
+
+
         return true;
     }
 }

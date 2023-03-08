@@ -4,9 +4,19 @@ public class Adventure {
     private String adventureName;
     private Combat[] combats;
 
+
     public Adventure(String adventureName, Combat[] combats) {
         this.adventureName = adventureName;
         this.combats = combats;
+    }
+
+
+    public Combat[] getCombats() {
+        return combats;
+    }
+
+    public int getNumEncounter(){
+        return combats.length;
     }
 
     public String getAdventureName() {

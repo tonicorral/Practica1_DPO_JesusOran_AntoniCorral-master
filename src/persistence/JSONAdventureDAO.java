@@ -65,7 +65,7 @@ public class JSONAdventureDAO implements AdventureDAO {
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-            throw new PersistenceException("Error: Couldn't open the Adventure file.\nCreating a new adventure.json \nClosing the program",e);
+            throw new PersistenceException("Error: Couldn't open the Adventure file.\nCreating a new adventures.json \nClosing the program",e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

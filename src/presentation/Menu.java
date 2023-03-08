@@ -59,7 +59,7 @@ public class Menu {
         System.out.println("Error: The characters.json file can’t be accessed.");
     }
     public void showNotLoadedAdventure(){
-        System.out.println("Error: The adventure.json file can’t be accessed.");
+        System.out.println("Error: The adventures.json file can’t be accessed.");
     }
 
     public int askForInt (){
@@ -197,8 +197,54 @@ public class Menu {
                 "Available adventures:");
     }
 
-    public void showName(String info){
-        System.out.println(""+info+"");
+    public void showName(String info, int number){
+
+        System.out.println((number+1)+"."+ " "+info+"");
+    }
+
+    public int showNumberAdventure(){
+        System.out.println("-> Choose an adventure:\n");
+        return askForInt() -1;
+    }
+
+    public int showNameAdv(String name){
+        System.out.println("Tavern keeper:"+ "“"+name+"”"+"“ And how many people shall join you?”\n");
+        System.out.println("-> Choose a number of characters [3..5]:");
+        int number = askForAnOption(5,3);
+        System.out.println("Tavern keeper: “Great, "+number+" it is.” “Who among these lads shall join you?”");
+        return number;
+    }
+
+    public int selectPartyAdv(int number, int current, List<String> party, List<String> character){
+        System.out.println("------------------------------\n Your party (" +(current+1)+ " /"+number+"):");
+        int i;
+        for (i = 0; i < party.size(); i++) {
+            System.out.println((i+1)+"."+party.get(i));
+        }
+        for (int j = 0; j < number-party.size(); j++) {
+            System.out.println((j+i)+"."+"Empty");
+
+        }
+        System.out.println("------------------------------\nAvailable characters:");
+        showNumberedList(character);
+        System.out.println("-> Choose character " +(current + 1)+ " in your party:");
+        return askForAnOption(character.size(), 1)-1;
+    }
+
+    public void yourParty(int current, List<String> party, String adventure){
+        System.out.println("------------------------------\n Your party (" +current+ " /"+current+"):");
+        showNumberedList(party);
+        System.out.println("Tavern keeper: “Great, good luck on your adventure lads!”");
+        System.out.println("The “"+ adventure+ "” will start soon...)");
+
+    }
+
+    public void printMonstersCombat(List<String[]> monsters, int numEncounter){
+        System.out.println("---------------------\nStarting Encounter"+(numEncounter+1)+":");
+        for (int i = 0; i < monsters.size(); i++) {
+            System.out.println("  -"+monsters.get(i)[0]+"x "+ monsters.get(i)[1]);
+        }
+        System.out.println("---------------------\n");
     }
 
 }
