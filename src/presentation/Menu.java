@@ -222,7 +222,7 @@ public class Menu {
             System.out.println((i+1)+"."+party.get(i));
         }
         for (int j = 0; j < number-party.size(); j++) {
-            System.out.println((j+i)+"."+"Empty");
+            System.out.println((j+1+i)+"."+"Empty");
 
         }
         System.out.println("------------------------------\nAvailable characters:");
@@ -246,5 +246,19 @@ public class Menu {
         }
         System.out.println("---------------------\n");
     }
+
+    public void preparationStage(List<String> party, int numParty, int encounters){
+        System.out.println("-------------------------\n *** Preparation stage *** \n-------------------------");
+        for (int i = 0; i <numParty ; i++) {
+            System.out.println(party.get(i)+" uses Self-Motivated. Their Spirit increases in +1.");
+        }
+
+        System.out.println("\n\nRolling initiative...");
+        for (int i = 0; i < numParty; i++) {
+
+        }
+
+    }
+
 
 }

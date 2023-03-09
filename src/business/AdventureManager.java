@@ -111,6 +111,19 @@ public class AdventureManager {
         }
     }
 
+    public void addSpirit(List<String> party){
+        try {
+            List <Adventure> adventures = adventureDAO.loadAdventure();
+            try {
+                List<Monster> monsters = monsterDAO.loadMonsters();
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }
 

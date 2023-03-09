@@ -211,6 +211,10 @@ public class Controller {
             menu.printMonstersCombat(am.getCombatMonsters(number, i), i);
         }
 
+        menu.preparationStage(party, numCharacters, encounters);
+
+
+
 
 
 

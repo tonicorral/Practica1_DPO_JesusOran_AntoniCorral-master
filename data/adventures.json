@@ -240,5 +240,108 @@
         ]
       }
     ]
+  },
+  {
+    "adventureName": "Prueba1",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Vampire",
+            "challenge": "Lieutenant",
+            "damageType": "Magical",
+            "experience": 24,
+            "hitPoints": 24,
+            "initiative": 2,
+            "damageDice": "d10"
+          },
+          {
+            "name": "Vampire",
+            "challenge": "Lieutenant",
+            "damageType": "Magical",
+            "experience": 24,
+            "hitPoints": 24,
+            "initiative": 2,
+            "damageDice": "d10"
+          },
+          {
+            "name": "Giant",
+            "challenge": "Lieutenant",
+            "damageType": "Physical",
+            "experience": 26,
+            "hitPoints": 35,
+            "initiative": -1,
+            "damageDice": "d12"
+          },
+          {
+            "name": "Giant",
+            "challenge": "Lieutenant",
+            "damageType": "Physical",
+            "experience": 26,
+            "hitPoints": 35,
+            "initiative": -1,
+            "damageDice": "d12"
+          },
+          {
+            "name": "Giant",
+            "challenge": "Lieutenant",
+            "damageType": "Physical",
+            "experience": 26,
+            "hitPoints": 35,
+            "initiative": -1,
+            "damageDice": "d12"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Morgoth",
+            "challenge": "Boss",
+            "damageType": "Psychical",
+            "experience": 168,
+            "hitPoints": 100,
+            "initiative": 4,
+            "damageDice": "d20"
+          },
+          {
+            "name": "Snuffler",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 6,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snuffler",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 6,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snuffler",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 6,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snuffler",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 6,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
   }
 ]

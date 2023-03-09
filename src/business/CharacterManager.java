@@ -170,5 +170,13 @@ public class CharacterManager {
         }
     }
 
+    /*public void addSpirit(List<String> party, int numParty){
+        Character character = null;
+        for (int i = 0; i < numParty; i++) {
+            party.add(character.setSpirit(character.getSpirit()+1));
+        }
+
+    }*/
+
 
 }
