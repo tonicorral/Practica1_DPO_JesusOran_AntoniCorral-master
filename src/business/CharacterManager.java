@@ -158,7 +158,7 @@ public class CharacterManager {
             List<Character> party = new ArrayList<>();
             for (int i = 0; i < characterName.size(); i++) {
                 for (int j = 0; j < characters.size(); j++) {
-                    if( characters.get(j).equals(characterName.get(i))){
+                    if( characters.get(j).getName().equals(characterName.get(i))){
                         party.add(characters.get(j));
                         break;
                     }

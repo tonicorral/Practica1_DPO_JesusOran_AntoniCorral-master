@@ -5,9 +5,11 @@ import java.util.List;
 
 public class Combat {
     private List <Monster> monsters;
-
     public Combat(List<Monster> monsters) {
         this.monsters = monsters;
+    }
+    public List<Monster> getMonsters() {
+        return monsters;
     }
 
     public List<String[]> getMonsterList(){

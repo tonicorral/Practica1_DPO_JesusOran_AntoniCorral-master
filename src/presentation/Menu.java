@@ -1,5 +1,6 @@
 package presentation;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -247,15 +248,16 @@ public class Menu {
         System.out.println("---------------------\n");
     }
 
-    public void preparationStage(List<String> party, int numParty, int encounters){
+    public void preparationStage(List<String> party, List<String[]> initiative, HashMap<String,String[]> partyActions){
         System.out.println("-------------------------\n *** Preparation stage *** \n-------------------------");
-        for (int i = 0; i <numParty ; i++) {
-            System.out.println(party.get(i)+" uses Self-Motivated. Their Spirit increases in +1.");
+        for (int i = 0; i <party.size() ; i++) {
+            String[] action = partyActions.get(party.get(i));
+            System.out.println(party.get(i)+" uses "+action[0]+". Their "+action[1]+" increases in "+action[2]+".");
         }
 
         System.out.println("\n\nRolling initiative...");
-        for (int i = 0; i < numParty; i++) {
-
+        for (int i = 0; i < initiative.size(); i++) {
+            System.out.println("- "+initiative.get(i)[1]+"  "+initiative.get(i)[0]);
         }
 
     }

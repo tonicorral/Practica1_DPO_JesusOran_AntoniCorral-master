@@ -2,6 +2,7 @@ package business;
 
 
 import java.util.List;
+import java.util.Random;
 
 public class Monster {
     private String name;
@@ -68,6 +69,11 @@ public class Monster {
 
     public void setDamageDice(String damageDice) {
         this.damageDice = damageDice;
+    }
+
+    public int rollInitiative(){
+        Random random = new Random();
+        return initiative+random.nextInt(1,13);
     }
 }
 

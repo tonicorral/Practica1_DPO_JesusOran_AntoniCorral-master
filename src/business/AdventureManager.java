@@ -124,6 +124,15 @@ public class AdventureManager {
         }
     }
 
+    public List<Monster> getMonsterList(int numAdv, int numComb){
+        List <Adventure> adventures = null;
+        try {
+            adventures = adventureDAO.loadAdventure();
+            return adventures.get(numAdv).getCombats()[numComb].getMonsters();
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
 

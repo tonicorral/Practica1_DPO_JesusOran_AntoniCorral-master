@@ -129,4 +129,14 @@ public class Character {
     public void setXp(int xp) {
         this.xp = xp;
     }
+
+    public String[] preparationAction(){
+        spirit++;
+        return new String[]{"Self-motivated","Spirit","+1"} ;
+    }
+
+    public int rollInitiative(){
+        Random random = new Random();
+        return spirit+random.nextInt(1,13);
+    }
 }

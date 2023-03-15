@@ -3,6 +3,7 @@ import business.*;
 
 import java.lang.Math;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Controller {
@@ -13,10 +14,11 @@ public class Controller {
     private AdventureManager am;
 
 
-    public Controller(Menu menu, CharacterManager cm, AdventureManager am) {
+    public Controller(Menu menu, CharacterManager cm, AdventureManager am, CombatManager ctm) {
         this.menu = menu;
         this.cm = cm;
         this.am = am;
+        this.ctm = ctm;
     }
 
     public void run() {
@@ -209,9 +211,11 @@ public class Controller {
 
         for (int i = 0; i < encounters; i++) {
             menu.printMonstersCombat(am.getCombatMonsters(number, i), i);
+            HashMap<String,String[]> partyActions = ctm.preparationPhaseAction(cm.getParty(party));
+            List<String[]> initiative= ctm.preparationPhaseInitiative(am.getMonsterList(number,i));
+            menu.preparationStage(party,initiative,partyActions);
         }
 
-        menu.preparationStage(party, numCharacters, encounters);
 
 
 

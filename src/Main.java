@@ -1,5 +1,6 @@
 import business.AdventureManager;
 import business.CharacterManager;
+import business.CombatManager;
 import business.Monster;
 import persistence.*;
 import persistence.exceptions.PersistenceException;
@@ -19,8 +20,9 @@ public class Main {
 
             CharacterManager cm = new CharacterManager(characterDAO);
             AdventureManager am = new AdventureManager(adventureDAO,monsterDAO);
+            CombatManager ctm = new CombatManager();
 
-            Controller controller = new Controller(menu, cm, am);
+            Controller controller = new Controller(menu, cm, am,ctm);
             controller.run();
 
         } catch (Exception e){
