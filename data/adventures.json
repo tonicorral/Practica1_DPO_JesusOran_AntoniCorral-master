@@ -343,5 +343,54 @@
         ]
       }
     ]
+  },
+  {
+    "adventureName": "Scrolling through Mordor",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Warg",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 8,
+            "hitPoints": 12,
+            "initiative": 2,
+            "damageDice": "d6"
+          },
+          {
+            "name": "Warg",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 8,
+            "hitPoints": 12,
+            "initiative": 2,
+            "damageDice": "d6"
+          }
+        ]
+      }
+    ]
   }
 ]

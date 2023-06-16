@@ -47,6 +47,26 @@ public class AdventureManager {
 
     }
 
+    public boolean checkAdventure(String nameAdventure){
+       List<Adventure> adventures = null;
+        try {
+            adventures = adventureDAO.loadAdventure();
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+        for (int i = 0; i < adventures.size(); i++) {
+            if(nameAdventure.equals(adventures.get(i).getAdventureName())){
+                return true;
+            }
+        }
+        for (int i = 0; i < adventures.size(); i++) {
+            if(!nameAdventure.equals(adventures.get(i).getAdventureName())){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public List<String[]> getMonstersInfo() {
         List<String[]> names = new ArrayList<>();
         List<Monster> monsters = null;

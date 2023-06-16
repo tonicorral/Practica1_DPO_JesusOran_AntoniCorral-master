@@ -37,6 +37,7 @@ public class Controller {
                 }
                 menu.showMessage("Your answer: ");
                 option = menu.askForAnOption(5, 1);
+
                 stop = optionRun(option);
             } while (stop);
 
@@ -77,11 +78,11 @@ public class Controller {
         name = menu.askForString();
 
         if(cm.checkName(name)) {
-            //System.out.println("no repet");
+            System.out.println("The name was already taken");
             return true;
         }
         if(!cm.checkCorrectName(name)){
-            //System.out.println("no letter");
+            System.out.println("The name is incorrect");
             return true;
         }
         name = cm.buildName(name);
@@ -106,6 +107,7 @@ public class Controller {
     private boolean listCharacters(){
         int number = 0;
         int character;
+        boolean out = false;
         List<String> characterName;
         menu.showMessage("\nTavern keeper: “Lads! They want to see you!”");
         menu.showMessage("“Who piques your interest?”\n");
@@ -121,14 +123,27 @@ public class Controller {
             return true;
         }
         menu.showCaracterInfo(cm.showInformation(characterName.get(number)));
-        menu.showMessage("\n\n[Enter name to delete, or press enter to cancel]");
-      //  menu.showMessage("Do you want to delete "++"?");
+        do{
 
-        if(characterName.get(number).equalsIgnoreCase(menu.askForString())){
-            cm.eliminateCharacter(characterName.get(number));
-            menu.showMessage("\n\nTavern keeper: “I’m sorry kiddo, but you have to leave.”\n");
-            menu.showMessage("Character "+characterName.get(number)+" left the Guild.");
-        }
+            menu.showMessage("\n[Enter name to delete, or press enter to cancel]\n");
+            menu.showMessage("Do you want to delete "+characterName.get(number)+"?");
+
+            String input = menu.askForString();
+
+            if(input.equalsIgnoreCase(characterName.get(number))){
+                cm.eliminateCharacter(characterName.get(number));
+                menu.showMessage("\n\nTavern keeper: “I’m sorry kiddo, but you have to leave.”\n");
+                menu.showMessage("Character "+characterName.get(number)+" left the Guild.");
+                break;
+            }
+            if(input.isEmpty()){
+                break;
+            }
+            else{
+                System.out.printf("Do you want to try again?");
+            }
+        }while (!out);
+
 
         return true;
     }
@@ -136,9 +151,14 @@ public class Controller {
 
     private boolean createAdventure(){
         String adventure;
+
         menu.showMessage("Tavern keeper: “Planning an adventure? Good luck with that!”\n");
         menu.showMessage("-> Name your adventure: ");
         adventure = menu.askForString();
+        if(am.checkAdventure(adventure)){
+            menu.showMessageErrorLoaded();
+            return true;
+        }
         menu.showMessage("Tavern keeper: “You plan to undertake "+adventure+", really?”\n" +
                 "“How long will that take?””\n");
         menu.showMessage("-> How many encounters do you want [1..4]: ");
@@ -211,19 +231,19 @@ public class Controller {
 
         for (int i = 0; i < encounters; i++) {
             menu.printMonstersCombat(am.getCombatMonsters(number, i), i);
-            HashMap<String,String[]> partyActions = ctm.preparationPhaseAction(cm.getParty(party));
+            HashMap<String,String[]> partyActions = ctm.preparationPhaseAction(cm.getPartyName(party));
             List<String[]> initiative= ctm.preparationPhaseInitiative(am.getMonsterList(number,i));
             menu.preparationStage(party,initiative,partyActions);
+            menu.printCombatStage();
+            //List<Integer> vidaMax = cm.getPartyHitPoints(party);
+            menu.printPartyNames(party, initiative);
+            //menu.printPartyRound(party,vidaMax,1);
         }
 
 
-
-
-
-
-
-
         return true;
+
+
     }
 }
 

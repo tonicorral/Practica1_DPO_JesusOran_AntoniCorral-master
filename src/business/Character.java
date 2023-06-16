@@ -14,6 +14,9 @@ public class Character {
     private int spirit ;
     private int xp;
 
+    private int vida;
+    private int vidaMax;
+
 
     public Character(String name, String player, int Level) {
         this.name = name;
@@ -130,6 +133,21 @@ public class Character {
         this.xp = xp;
     }
 
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getVidaMax() {
+        return vidaMax;
+    }
+    public void setVidaMax(int vidaMax) {
+        this.vidaMax = vidaMax;
+    }
+
     public String[] preparationAction(){
         spirit++;
         return new String[]{"Self-motivated","Spirit","+1"} ;
@@ -138,5 +156,9 @@ public class Character {
     public int rollInitiative(){
         Random random = new Random();
         return spirit+random.nextInt(1,13);
+    }
+    private void vidaMax(){
+        vidaMax = (10 + this.body)* this.level;
+
     }
 }

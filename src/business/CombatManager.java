@@ -33,7 +33,6 @@ public class CombatManager {
             iniciative.add(c);
         }
         Collections.sort(iniciative,new Comparator<String[]> (){
-
             @Override
             public int compare(String[] o1, String[] o2) {
                 if(o1[1]==o2[1]){
@@ -47,4 +46,6 @@ public class CombatManager {
         });
         return iniciative;
     }
+
+
 }

@@ -1,5 +1,7 @@
 package presentation;
 
+import business.Monster;
+
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -260,6 +262,62 @@ public class Menu {
             System.out.println("- "+initiative.get(i)[1]+"  "+initiative.get(i)[0]);
         }
 
+    }
+
+    public void printCombatStage(){
+        System.out.println("---------------------\n*** Combat stage ***\n" + "---------------------");
+    }
+    public void printPartyRound(List<String> party, List<Integer> vidaMax, int i){
+        System.out.println("Round "+ i + ":");
+        System.out.println("Party:");
+        for(int j = 0; j < party.size(); j++){
+            System.out.printf("\t-"+ party.get(j)+ "\t" +vidaMax.get(j)+ "/"+ vidaMax.get(j)+ "hit points");
+        }
+    }
+
+    public void printPartyNames(List<String> party, List<String[]> initiative){
+        for(int j = 0; j < party.size(); j++){
+            System.out.println("\t-"+ party.get(j)+ "\t" +"50"+ "/"+ "40"+ " hit points");
+        }
+        System.out.println("");
+        for (int i = 0; i < initiative.size(); i++) {
+            System.out.println(initiative.get(i)[0] + " attacks "+ "ORC "+ "with "+ "Sword.");
+            System.out.println("Hits and deals" +"x" + "physicial damage.");
+        }
+        System.out.println("End of round 1");
+    }
+
+    public void printShortRest(List<String> party, boolean levelUP, boolean dead){
+        System.out.println("------------------------\n" +
+                "*** Short rest stage ***\n" +
+                "------------------------\n");
+        for (int i = 0; i < party.size(); i++) {
+            System.out.printf(party.get(i)+ "gains" + "x"+ "xp.");
+            if(levelUP){
+                System.out.println(party.get(i)+ " levels up. They are now lvl "+ "X"+ "!");;
+            }
+            else{
+                System.out.println("");
+            }
+        }
+        for (int i = 0; i < party.size(); i++) {
+            System.out.printf(party.get(i));
+            if(dead){
+                System.out.println(" is unconscious.");
+            }
+            else{
+                System.out.println(" uses Bandage time. Heals"+ " x" + " hit points.");
+            }
+        }
+    }
+
+    public void printFinalMessage(boolean victory, String combate){
+        if(!victory){
+            System.out.println("Tavern keeper: "+ "“Lad, wake up. Yes, your party fell unconscious“\n"+ "“Don't worry, your are safe back at the Tavern.“");
+        }
+        else{
+            System.out.println("Congratulations, your party completed "+ "“" + combate+ "“");
+        }
     }
 
 
