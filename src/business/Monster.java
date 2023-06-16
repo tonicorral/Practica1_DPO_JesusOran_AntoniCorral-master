@@ -14,7 +14,6 @@ public class Monster {
     private String damageDice;
 
 
-
     public String getName() {
         return name;
     }
@@ -75,5 +74,9 @@ public class Monster {
         Random random = new Random();
         return initiative+random.nextInt(1,13);
     }
+    public int hitMonster(int damage){
+        return hitPoints - damage;
+    }
+
 }
 

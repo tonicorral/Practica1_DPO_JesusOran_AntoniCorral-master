@@ -275,14 +275,16 @@ public class Menu {
         }
     }
 
-    public void printPartyNames(List<String> party, List<String[]> initiative){
-        for(int j = 0; j < party.size(); j++){
-            System.out.println("\t-"+ party.get(j)+ "\t" +"50"+ "/"+ "40"+ " hit points");
+    public void printPartyNames(List<String> name, List<Integer> vida, List<Integer> maxVida) {
+        for (int j = 0; j < name.size(); j++) {
+            System.out.println("\t-" + name.get(j) + "\t" + vida.get(j) + "/" + maxVida.get(j) + " hit points");
         }
+    }
+    public void printBattle(List<String[]> attacks){
         System.out.println("");
-        for (int i = 0; i < initiative.size(); i++) {
-            System.out.println(initiative.get(i)[0] + " attacks "+ "ORC "+ "with "+ "Sword.");
-            System.out.println("Hits and deals" +"x" + "physicial damage.");
+        for (int i = 0; i < attacks.size(); i++) {
+            System.out.println(attacks.get(i)[0] + " attacks "+  attacks.get(i)[1]+ " with "+ attacks.get(i)[3]);
+            System.out.println("Hits and deals " + attacks.get(i)[2]+ " physicial damage.\n");
         }
         System.out.println("End of round 1");
     }

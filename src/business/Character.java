@@ -14,17 +14,33 @@ public class Character {
     private int spirit ;
     private int xp;
 
-    private int vida;
     private int vidaMax;
-
-
+    private int vida;
     public Character(String name, String player, int Level) {
         this.name = name;
         this.player = player;
         this.xp = LevelToXp(Level);
         this.clase = "Adventurer";
         this.level = Level;
+
     }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getVidaMax() {
+        return vidaMax;
+    }
+
+    public void setVidaMax(int vidaMax) {
+        this.vidaMax = vidaMax;
+    }
+
     public String getName() {
         return name;
     }
@@ -133,20 +149,6 @@ public class Character {
         this.xp = xp;
     }
 
-    public int getVida() {
-        return vida;
-    }
-
-    public void setVida(int vida) {
-        this.vida = vida;
-    }
-
-    public int getVidaMax() {
-        return vidaMax;
-    }
-    public void setVidaMax(int vidaMax) {
-        this.vidaMax = vidaMax;
-    }
 
     public String[] preparationAction(){
         spirit++;
@@ -157,8 +159,9 @@ public class Character {
         Random random = new Random();
         return spirit+random.nextInt(1,13);
     }
-    private void vidaMax(){
-        vidaMax = (10 + this.body)* this.level;
-
+    public int vida(){
+        return (10 + body)* level;
     }
+
+
 }

@@ -1,5 +1,6 @@
 package presentation;
 import business.*;
+import business.Character;
 
 import java.lang.Math;
 import java.util.ArrayList;
@@ -220,7 +221,7 @@ public class Controller {
         int numCharacters = menu.showNameAdv(am.getAdventureName(number));
         List<String> character = cm.showCharacters("");
         List<String> party = new ArrayList<>();
-
+        //List<Character> partyChar = ctm.loadParty();
         for (int i = 0; i < numCharacters; i++) {
             int selection = menu.selectPartyAdv(numCharacters, i, party, character);
             party.add(character.get(selection));
@@ -236,7 +237,11 @@ public class Controller {
             menu.preparationStage(party,initiative,partyActions);
             menu.printCombatStage();
             //List<Integer> vidaMax = cm.getPartyHitPoints(party);
-            menu.printPartyNames(party, initiative);
+            menu.printPartyNames(party,ctm.getCharacterHitPoints(), ctm.getMaxVida());
+         //   for (int j = 0; j < ; j++) {
+        //}
+            List<String[]> attacks = ctm.Attacks(am.getMonsterList(number, i));
+            menu.printBattle(attacks);
             //menu.printPartyRound(party,vidaMax,1);
         }
 

@@ -1,192 +1,32 @@
 [
   {
-    "name": "Caranthir",
-    "player": "SonsOfFeanor",
-    "level": 0,
-    "body": 2,
-    "mind": 0,
-    "spirit": 1,
-    "xp": 306,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Curufin",
-    "player": "SonsOfFeanor",
-    "level": 0,
-    "body": 1,
-    "mind": 1,
-    "spirit": 1,
-    "xp": 286,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Elendil",
-    "player": "Eru IlÃºvatar",
-    "level": 0,
-    "body": 1,
-    "mind": 3,
-    "spirit": 2,
-    "xp": 307,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "FÃ«anor",
-    "player": "SonsOfFeanor",
-    "level": 0,
-    "body": 1,
-    "mind": 1,
-    "spirit": 2,
-    "xp": 407,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Finrod Felagund",
-    "player": "Eru IlÂ£vatar",
-    "level": 0,
-    "body": 3,
-    "mind": 3,
-    "spirit": 0,
-    "xp": 144,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Galadriel",
-    "player": "Eru IlÃºvatar",
-    "level": 0,
-    "body": -1,
-    "mind": 2,
-    "spirit": 2,
-    "xp": 118,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Hellboy",
-    "player": "ComicSans",
-    "level": 0,
-    "body": 0,
-    "mind": -1,
-    "spirit": 2,
-    "xp": 167,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Jinx",
-    "player": "IPlayLOLInClass",
-    "level": 0,
-    "body": -1,
-    "mind": 2,
-    "spirit": 2,
-    "xp": 50,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Luke Skywalker",
-    "player": "Lucas Films",
-    "level": 0,
-    "body": -1,
-    "mind": 0,
-    "spirit": -1,
-    "xp": 329,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Maedhros",
-    "player": "SonsOfFeanor",
-    "level": 0,
-    "body": 0,
-    "mind": -1,
-    "spirit": 2,
-    "xp": 348,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "NiÃ«nor NÃ­niel",
-    "player": "Eru IlÃºvatar",
-    "level": 0,
-    "body": 3,
-    "mind": 0,
-    "spirit": 1,
-    "xp": 148,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Percival Fredrickstein von Musel Klossowski de Rolo III",
-    "player": "Critter9",
-    "level": 0,
-    "body": 1,
-    "mind": -1,
-    "spirit": 1,
-    "xp": 499,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "TÃºrin Turambar",
-    "player": "Eru IlÃºvatar",
-    "level": 0,
-    "body": 1,
-    "mind": 2,
-    "spirit": 2,
-    "xp": 292,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Vi",
-    "player": "IPlayLOLInClass",
-    "level": 0,
-    "body": 0,
-    "mind": 2,
-    "spirit": -1,
-    "xp": 844,
-    "vida": 0,
-    "vidaMax": 0
-  },
-  {
-    "name": "Loool",
-    "player": "tno",
+    "name": "Jesus",
+    "player": "Jesus1",
     "clase": "Adventurer",
     "level": 2,
-    "body": 2,
-    "mind": 1,
+    "body": 0,
+    "mind": 2,
     "spirit": 0,
-    "xp": 101,
-    "vida": 0,
-    "vidaMax": 0
+    "xp": 101
   },
   {
-    "name": "Finrod Falagund",
-    "player": "Eru Iluvatar",
+    "name": "Toni",
+    "player": "Toni1",
     "clase": "Adventurer",
     "level": 3,
     "body": 1,
-    "mind": 0,
+    "mind": 2,
     "spirit": 0,
-    "xp": 201,
-    "vida": 0,
-    "vidaMax": 0
+    "xp": 201
   },
   {
-    "name": "Ee",
-    "player": "qq",
+    "name": "Gordo",
+    "player": "Gordo1",
     "clase": "Adventurer",
-    "level": 3,
+    "level": 5,
     "body": 1,
     "mind": 0,
     "spirit": 1,
-    "xp": 201,
-    "vida": 0,
-    "vidaMax": 0
+    "xp": 401
   }
 ]
