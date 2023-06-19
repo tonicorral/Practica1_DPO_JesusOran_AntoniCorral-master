@@ -160,6 +160,7 @@ public class Character {
         return spirit+random.nextInt(1,13);
     }
     public int vida(){
+
         return (10 + body)* level;
     }
 

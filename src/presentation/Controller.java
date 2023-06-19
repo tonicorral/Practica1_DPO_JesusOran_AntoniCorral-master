@@ -211,6 +211,7 @@ public class Controller {
 
     private boolean startAdventure() {
         int number;
+        int j = 1;
         menu.menuAdventures();
         // HAY QUE MIRAR ANTES QUE SI HAY MENOS DE 3 NO PUEDE MOSRAR ESTO
         List<String> info = am.getAllAdventureName();
@@ -237,12 +238,20 @@ public class Controller {
             menu.preparationStage(party,initiative,partyActions);
             menu.printCombatStage();
             //List<Integer> vidaMax = cm.getPartyHitPoints(party);
-            menu.printPartyNames(party,ctm.getCharacterHitPoints(), ctm.getMaxVida());
-         //   for (int j = 0; j < ; j++) {
-        //}
-            List<String[]> attacks = ctm.Attacks(am.getMonsterList(number, i));
-            menu.printBattle(attacks);
+            for (int k = 0; k < cm.getPartyName(party).size(); k++) {
+                System.out.println(cm.getPartyName(party).get(k).getName());
+                System.out.println(cm.getPartyName(party).get(k).getVida());
+                System.out.println(cm.getPartyName(party).get(k).getVidaMax());
+
+            }
+            do{
+                menu.printPartyRound(party, ctm.getMaxVida(),ctm.getCharacterHitPoints(cm.getPartyName(party)), j);
+                List<String[]> attacks = ctm.Attacks(am.getMonsterList(number, i));
+                menu.printBattle(attacks);
+                j++;
+            }while (!ctm.deadMonsters(am.getMonsterList(number, i)));
             //menu.printPartyRound(party,vidaMax,1);
+            j = 1;
         }
 
 

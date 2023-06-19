@@ -267,26 +267,20 @@ public class Menu {
     public void printCombatStage(){
         System.out.println("---------------------\n*** Combat stage ***\n" + "---------------------");
     }
-    public void printPartyRound(List<String> party, List<Integer> vidaMax, int i){
+    public void printPartyRound(List<String> party, List<Integer> vidaMax, List<Integer> vida, int i){
         System.out.println("Round "+ i + ":");
         System.out.println("Party:");
         for(int j = 0; j < party.size(); j++){
-            System.out.printf("\t-"+ party.get(j)+ "\t" +vidaMax.get(j)+ "/"+ vidaMax.get(j)+ "hit points");
+            System.out.println("\t-"+ party.get(j)+ "\t" +vida.get(j)+ "/"+ vidaMax.get(j)+ "hit points");
         }
     }
 
-    public void printPartyNames(List<String> name, List<Integer> vida, List<Integer> maxVida) {
-        for (int j = 0; j < name.size(); j++) {
-            System.out.println("\t-" + name.get(j) + "\t" + vida.get(j) + "/" + maxVida.get(j) + " hit points");
-        }
-    }
     public void printBattle(List<String[]> attacks){
         System.out.println("");
         for (int i = 0; i < attacks.size(); i++) {
             System.out.println(attacks.get(i)[0] + " attacks "+  attacks.get(i)[1]+ " with "+ attacks.get(i)[3]);
             System.out.println("Hits and deals " + attacks.get(i)[2]+ " physicial damage.\n");
         }
-        System.out.println("End of round 1");
     }
 
     public void printShortRest(List<String> party, boolean levelUP, boolean dead){

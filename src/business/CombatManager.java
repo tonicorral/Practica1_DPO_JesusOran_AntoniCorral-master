@@ -57,10 +57,11 @@ public class CombatManager {
         }
         return maxVida;
     }
-    public List<Integer> getCharacterHitPoints(){
+    public List<Integer> getCharacterHitPoints(List<Character> characters){
         List<Integer> vida = new ArrayList<>();
         for(int j = 0; j < party.size(); j++) {
-            vida.add(j ,party.get(j).vida());
+            party.get(j).setVida(characters.get(j).getVida());
+            vida.add(j ,party.get(j).getVida());
         }
 
        return vida;
@@ -88,7 +89,7 @@ public class CombatManager {
             c[0]=monsters.get(i).getName();
             int rand = random.nextInt(1, party.size());
             c[1] = party.get(rand).getName();
-            c[2] = attackToCharacter(party,monsters,i, rand);
+            c[2] = attackToCharacter(monsters,i, rand);
             c[3] = monsters.get(i).getDamageType();
             attack.add(c);
         }
@@ -115,13 +116,34 @@ public class CombatManager {
         return Integer.toString(damage);
     }
 
-    public String attackToCharacter(List<Character> party, List<Monster> monsters, int posicionMonster, int posicionChar){
+    public String attackToCharacter(List<Monster> monsters, int posicionMonster, int posicionChar){
         Random random = new Random();
         int damage = random.nextInt(1,Integer.parseInt(monsters.get(posicionMonster).getDamageDice().substring(1)));
-        party.get(posicionChar).setVida(party.get(posicionChar).vida()- damage);
+        party.get(posicionChar).setVida(party.get(posicionChar).getVida()- damage);
+        System.out.println(party.get(posicionChar).getVida());
+
+
         return Integer.toString(damage);
     }
 
+
+    public boolean deadMonsters(List<Monster> monsters){
+        for (int i = 0; i < monsters.size(); i++) {
+            if (monsters.get(i).getHitPoints() != 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean deadCharacters(List<Character> party){
+        for (int i = 0; i < party.size(); i++) {
+            if(party.get(i).getVida() != 0){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 

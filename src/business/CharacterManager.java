@@ -169,15 +169,21 @@ public class CharacterManager {
             throw new RuntimeException(e);
         }
     }
+
+    public void initVida(List<Character> characters){
+        for (int i = 0; i < characters.size(); i++) {
+            characters.get(i).setVidaMax(characters.get(i).vida());
+        }
+    }
 /*
-    public List<Integer> getPartyHitPoints(List<String> characterName){
+    public List<Integer> getPartyHitPoints(List<String> characterName, int damage){
         try {
             List<Character> characters = characterDAO.loadCharacters();
             List<Integer> vida = new ArrayList<>();
             for (int i = 0; i < characterName.size(); i++) {
                 for (int j = 0; j < characters.size(); j++) {
                     if( characters.get(j).getName().equals(characterName.get(i))){
-                        vida.set(j,characters.get(j).getVidaMax());
+                        vida.add(characters.get(j).getVida()- damage);
                         break;
                     }
                 }
@@ -186,8 +192,8 @@ public class CharacterManager {
         } catch (PersistenceException e) {
             throw new RuntimeException(e);
         }
-    }*/
-
+    }
+*/
     /*public void addSpirit(List<String> party, int numParty){
         Character character = null;
         for (int i = 0; i < numParty; i++) {
