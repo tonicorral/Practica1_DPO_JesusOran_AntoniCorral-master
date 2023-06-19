@@ -392,5 +392,54 @@
         ]
       }
     ]
+  },
+  {
+    "adventureName": "La mierda ",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Giant",
+            "challenge": "Lieutenant",
+            "damageType": "Physical",
+            "experience": 26,
+            "hitPoints": 35,
+            "initiative": -1,
+            "damageDice": "d12"
+          },
+          {
+            "name": "Giant",
+            "challenge": "Lieutenant",
+            "damageType": "Physical",
+            "experience": 26,
+            "hitPoints": 35,
+            "initiative": -1,
+            "damageDice": "d12"
+          }
+        ]
+      }
+    ]
   }
 ]

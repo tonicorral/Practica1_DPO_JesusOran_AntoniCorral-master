@@ -14,12 +14,17 @@ public class Controller {
 
     private AdventureManager am;
 
+    private List<Integer> vidaMax;
+
+    private List<Integer> vida;
 
     public Controller(Menu menu, CharacterManager cm, AdventureManager am, CombatManager ctm) {
         this.menu = menu;
         this.cm = cm;
         this.am = am;
         this.ctm = ctm;
+        vida = new ArrayList<>();
+        vidaMax = new ArrayList<>();
     }
 
     public void run() {
@@ -222,12 +227,20 @@ public class Controller {
         int numCharacters = menu.showNameAdv(am.getAdventureName(number));
         List<String> character = cm.showCharacters("");
         List<String> party = new ArrayList<>();
-        //List<Character> partyChar = ctm.loadParty();
+        List<Character> partyGroup;
+
         for (int i = 0; i < numCharacters; i++) {
             int selection = menu.selectPartyAdv(numCharacters, i, party, character);
             party.add(character.get(selection));
+            partyGroup = cm.getPartyName(party);
+            System.out.println(partyGroup.get(i).getName());
+            int life = (10 + partyGroup.get(i).getBody())*partyGroup.get(i).getLevel();
+            vida.add(life);
+            vidaMax.add(life);
+
             character.remove(selection);
         }
+
         menu.yourParty(numCharacters, party, info.get(number)); //seleccion de jugadores
         int encounters = am.getNumEncounters(number);
 
@@ -237,19 +250,24 @@ public class Controller {
             List<String[]> initiative= ctm.preparationPhaseInitiative(am.getMonsterList(number,i));
             menu.preparationStage(party,initiative,partyActions);
             menu.printCombatStage();
-            //List<Integer> vidaMax = cm.getPartyHitPoints(party);
-            for (int k = 0; k < cm.getPartyName(party).size(); k++) {
-                System.out.println(cm.getPartyName(party).get(k).getName());
-                System.out.println(cm.getPartyName(party).get(k).getVida());
-                System.out.println(cm.getPartyName(party).get(k).getVidaMax());
 
-            }
-            do{
-                menu.printPartyRound(party, ctm.getMaxVida(),ctm.getCharacterHitPoints(cm.getPartyName(party)), j);
-                List<String[]> attacks = ctm.Attacks(am.getMonsterList(number, i));
+           // do{
+                menu.printPartyRound(party, vidaMax,vida, j);
+                List<String[]> attacks = ctm.Attacks(initiative,am.getMonsterList(number, i), vida);
                 menu.printBattle(attacks);
                 j++;
-            }while (!ctm.deadMonsters(am.getMonsterList(number, i)));
+            System.out.println("vida1: " + vida.get(0));
+            System.out.println("vida2: " + vida.get(1));
+            System.out.println("vida3: " + vida.get(2));
+
+            List<Integer> randCharacters = ctm.selectRandCharacters(attacks);
+            System.out.println(randCharacters.size());
+           // System.out.println(randCharacters.get(1));
+            //vida.add(randCharacters, ctm.getCharacterHitPoints(am.getMonsterList(number,i), attacks, vida, randCharacters.get()));
+
+
+               // System.out.println(vida);
+           // }while (!ctm.deadMonsters(am.getMonsterList(number, i)));
             //menu.printPartyRound(party,vidaMax,1);
             j = 1;
         }

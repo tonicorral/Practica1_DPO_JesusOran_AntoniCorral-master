@@ -14,8 +14,7 @@ public class Character {
     private int spirit ;
     private int xp;
 
-    private int vidaMax;
-    private int vida;
+
     public Character(String name, String player, int Level) {
         this.name = name;
         this.player = player;
@@ -25,21 +24,6 @@ public class Character {
 
     }
 
-    public int getVida() {
-        return vida;
-    }
-
-    public void setVida(int vida) {
-        this.vida = vida;
-    }
-
-    public int getVidaMax() {
-        return vidaMax;
-    }
-
-    public void setVidaMax(int vidaMax) {
-        this.vidaMax = vidaMax;
-    }
 
     public String getName() {
         return name;

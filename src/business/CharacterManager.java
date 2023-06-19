@@ -170,11 +170,6 @@ public class CharacterManager {
         }
     }
 
-    public void initVida(List<Character> characters){
-        for (int i = 0; i < characters.size(); i++) {
-            characters.get(i).setVidaMax(characters.get(i).vida());
-        }
-    }
 /*
     public List<Integer> getPartyHitPoints(List<String> characterName, int damage){
         try {
