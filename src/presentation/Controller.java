@@ -18,6 +18,10 @@ public class Controller {
 
     private List<Integer> vida;
 
+    private List<Integer> vidaMonster;
+
+    private int xp;
+
     public Controller(Menu menu, CharacterManager cm, AdventureManager am, CombatManager ctm) {
         this.menu = menu;
         this.cm = cm;
@@ -25,6 +29,7 @@ public class Controller {
         this.ctm = ctm;
         vida = new ArrayList<>();
         vidaMax = new ArrayList<>();
+        vidaMonster = new ArrayList<>();
     }
 
     public void run() {
@@ -192,7 +197,7 @@ public class Controller {
                             }
                             if(!f){
                                 encounter.add(new String[]{monsterInfo.get(monster[0])[0], String.valueOf(monster[1]),monsterInfo.get(monster[0])[1]});
-
+                              //  vidaMonster.add(monsterInfo.ge);
                             }
                         }
                         break;
@@ -237,7 +242,6 @@ public class Controller {
             int life = (10 + partyGroup.get(i).getBody())*partyGroup.get(i).getLevel();
             vida.add(life);
             vidaMax.add(life);
-
             character.remove(selection);
         }
 
@@ -245,31 +249,49 @@ public class Controller {
         int encounters = am.getNumEncounters(number);
 
         for (int i = 0; i < encounters; i++) {
-            menu.printMonstersCombat(am.getCombatMonsters(number, i), i);
+            List<String[]> monstersList = ctm.encountersList(am.getMonsterList(number, i));
+            List<Integer> monsterLife = ctm.setMonsterLife(am.getMonsterList(number, i));
+            menu.printMonstersCombat(monstersList, i);
             HashMap<String,String[]> partyActions = ctm.preparationPhaseAction(cm.getPartyName(party));
             List<String[]> initiative= ctm.preparationPhaseInitiative(am.getMonsterList(number,i));
             menu.preparationStage(party,initiative,partyActions);
             menu.printCombatStage();
 
-           // do{
+            do{
                 menu.printPartyRound(party, vidaMax,vida, j);
-                List<String[]> attacks = ctm.Attacks(initiative,am.getMonsterList(number, i), vida);
+                List<String[]> attacks = ctm.Attacks(initiative,am.getMonsterList(number, i), vida, monsterLife);
+                vida =  ctm.updateVida(attacks, vida, cm.getPartyName(party));
+                monsterLife = ctm.updateVidaMonster(attacks, am.getMonsterList(number, i), monsterLife);
                 menu.printBattle(attacks);
                 j++;
-            System.out.println("vida1: " + vida.get(0));
-            System.out.println("vida2: " + vida.get(1));
-            System.out.println("vida3: " + vida.get(2));
 
-            List<Integer> randCharacters = ctm.selectRandCharacters(attacks);
-            System.out.println(randCharacters.size());
-           // System.out.println(randCharacters.get(1));
-            //vida.add(randCharacters, ctm.getCharacterHitPoints(am.getMonsterList(number,i), attacks, vida, randCharacters.get()));
+                if (ctm.checkAllMonstersDead(monsterLife)){
+                    System.out.println("MONSTERS DEAD");
+                    xp = ctm.setXPDeadMonster(monsterLife,xp, am.getMonsterList(number, i));
+                    System.out.println("print xp"+ xp);
 
-
-               // System.out.println(vida);
-           // }while (!ctm.deadMonsters(am.getMonsterList(number, i)));
+                }
+               // System.out.println(vida);!ctm.deadMonsters(am.getMonsterList(number, i))
+                // ||!ctm.deadCharacters(vida)
+            }while (!ctm.deadMonsters(monsterLife));
             //menu.printPartyRound(party,vidaMax,1);
             j = 1;
+            List<String[]> atributos = ctm.checkAtributos(xp, cm.getPartyName(party));
+            List<String> level = cm.setNewLevel(cm.getPartyName(party), atributos);
+
+            menu.printShortRest(party, atributos, level, xp, vida);
+            vida = ctm.setLife(vida, vidaMax, atributos);
+            xp = 0;
+
+            if(ctm.checkAllCharacters(vida)){
+                System.out.println("ALL DEAD");
+                menu.printFinalMessage(false, am.getAdventureName(number));
+                break;
+            } else if (ctm.checkAllMonstersDead(monsterLife) && (i+1) == encounters){
+                System.out.println("ALL MONSTERS DEAD");
+                System.out.println();
+                menu.printFinalMessage(true, am.getAdventureName(number));
+            }
         }
 
 

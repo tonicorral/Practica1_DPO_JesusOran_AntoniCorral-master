@@ -60,8 +60,14 @@ public class JSONCharacterDAO implements CharacterDAO{
         }
     }
 
-
-
+    @Override
+    public void updateCharacter(Character character) {
+        try {
+            Writer file = new FileWriter("data/characters.json",false);
+        }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 }

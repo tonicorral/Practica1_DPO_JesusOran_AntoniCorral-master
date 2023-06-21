@@ -441,5 +441,348 @@
         ]
       }
     ]
+  },
+  {
+    "adventureName": "hola",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snuffler",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 6,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Gothmog",
+            "challenge": "Boss",
+            "damageType": "Magical",
+            "experience": 148,
+            "hitPoints": 87,
+            "initiative": 3,
+            "damageDice": "d20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "Practica1",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snuffler",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 6,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "P2",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Warg Rider",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 6,
+            "hitPoints": 6,
+            "initiative": 2,
+            "damageDice": "d6"
+          },
+          {
+            "name": "Warg Rider",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 6,
+            "hitPoints": 6,
+            "initiative": 2,
+            "damageDice": "d6"
+          },
+          {
+            "name": "Warg Rider",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 6,
+            "hitPoints": 6,
+            "initiative": 2,
+            "damageDice": "d6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "adventureName": "P3",
+    "combats": [
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      },
+      {
+        "monsters": [
+          {
+            "name": "Snaga",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 4,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          },
+          {
+            "name": "Goblin",
+            "challenge": "Minion",
+            "damageType": "Physical",
+            "experience": 2,
+            "hitPoints": 5,
+            "initiative": 0,
+            "damageDice": "d4"
+          }
+        ]
+      }
+    ]
   }
 ]

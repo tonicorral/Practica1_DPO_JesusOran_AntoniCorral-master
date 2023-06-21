@@ -245,7 +245,7 @@ public class Menu {
     public void printMonstersCombat(List<String[]> monsters, int numEncounter){
         System.out.println("---------------------\nStarting Encounter"+(numEncounter+1)+":");
         for (int i = 0; i < monsters.size(); i++) {
-            System.out.println("  -"+monsters.get(i)[0]+"x "+ monsters.get(i)[1]);
+            System.out.println("  -"+monsters.get(i)[1]+"x "+ monsters.get(i)[0]);
         }
         System.out.println("---------------------\n");
     }
@@ -283,28 +283,30 @@ public class Menu {
         }
     }
 
-    public void printShortRest(List<String> party, boolean levelUP, boolean dead){
+    public void printShortRest(List<String> party, List<String[]> levelUP,List<String> level ,int xp, List<Integer> vida){
         System.out.println("------------------------\n" +
                 "*** Short rest stage ***\n" +
                 "------------------------\n");
         for (int i = 0; i < party.size(); i++) {
-            System.out.printf(party.get(i)+ "gains" + "x"+ "xp.");
-            if(levelUP){
-                System.out.println(party.get(i)+ " levels up. They are now lvl "+ "X"+ "!");;
+            System.out.printf(party.get(i)+ " gains " + xp + " xp.");
+            if(level.get(i).equals("N")){
+                System.out.println(party.get(i)+ " levels up. They are now lvl "+ levelUP.get(i)[0]+ "!");;
             }
             else{
                 System.out.println("");
             }
         }
+        System.out.println("\n");
         for (int i = 0; i < party.size(); i++) {
             System.out.printf(party.get(i));
-            if(dead){
+            if(vida.get(i) == 0){
                 System.out.println(" is unconscious.");
             }
             else{
-                System.out.println(" uses Bandage time. Heals"+ " x" + " hit points.");
+                System.out.println(" uses Bandage time. Heals "+ levelUP.get(i)[2] + " hit points.");
             }
         }
+        System.out.println("\n\n");
     }
 
     public void printFinalMessage(boolean victory, String combate){
@@ -312,7 +314,7 @@ public class Menu {
             System.out.println("Tavern keeper: "+ "“Lad, wake up. Yes, your party fell unconscious“\n"+ "“Don't worry, your are safe back at the Tavern.“");
         }
         else{
-            System.out.println("Congratulations, your party completed "+ "“" + combate+ "“");
+            System.out.println("Congratulations, your party completed "+ "“" + combate+ "“\n\n");
         }
     }
 

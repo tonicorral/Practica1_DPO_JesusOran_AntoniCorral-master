@@ -170,6 +170,32 @@ public class CharacterManager {
         }
     }
 
+
+    public List<String> setNewLevel(List<Character> party, List<String[]> atributos){
+        List<String> level = new ArrayList<>();
+        try {
+            List<Character> characters = characterDAO.loadCharacters();
+            for (int i = 0; i < characters.size(); i++) {
+                for (int j = 0; j < party.size(); j++) {
+                    if(characters.get(i).getName().equals(party.get(j).getName())){
+                        if(party.get(j).getXp() < Integer.parseInt(atributos.get(j)[1])){
+                            party.get(j).setXp(Integer.parseInt(atributos.get(j)[1]));
+                            party.get(j).setLevel(Integer.parseInt(atributos.get(j)[0]));
+                            characters.set(i, party.get(j));
+                            level.add(j, "Y");
+                        }
+                        else{
+                            level.add(j, "N");
+                        }
+                    }
+                }
+            }
+        } catch (PersistenceException e) {
+            throw new RuntimeException(e);
+        }
+
+        return level;
+    }
 /*
     public List<Integer> getPartyHitPoints(List<String> characterName, int damage){
         try {
